@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book Haven Bookstore | Reading Lounge</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-title">
+        <img
+          src="https://cdn2.sophia.org/markup_pictures/38795/file/a13a208b52c41843ee81f565917670dc.png"
+          alt="Book Haven Bookstore logo"
+          width="120"
+        />
+
+        <h1>Book Haven Bookstore</h1>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us/Contact</a>
+        <a href="community.html">Reading Lounge</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Reader Reviews</h2>
+
+        <div class="community-card">
+          <strong>Emily R.</strong><br />
+          “Book Haven always helps me discover something new and inspiring. It
+          feels like a peaceful place for readers.”
+        </div>
+
+        <div class="community-card">
+          <strong>Marcus T.</strong><br />
+          “The magazine and journal selection is excellent, and the staff are
+          always helpful.”
+        </div>
+      </section>
+
+      <section>
+        <h2>Book Club Events</h2>
+
+        <div class="community-card">
+          Book Haven Bookstore hosts reading discussions, student study nights,
+          and seasonal book club gatherings to bring readers together.
+        </div>
+      </section>
+
+      <section>
+        <h2>Staff Picks</h2>
+
+        <div class="community-card">
+          Our staff recommends new fiction, fantasy stories, travel magazines,
+          food magazines, journals, and gifts for every kind of reader.
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <h3>Subscribe to Our Newsletter</h3>
+
+        <form id="subscribeForm">
+          <label for="newsletter">Email:</label>
+          <input type="email" id="newsletter" name="newsletter" required />
+          <button type="submit">Subscribe</button>
+        </form>
+
+        <p>Follow us: Facebook | Instagram | Pinterest</p>
+      </div>
+    </footer>
+
+    <script>
+      const subscribeForm = document.getElementById('subscribeForm');
+
+      subscribeForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        alert('Thank you for subscribing.');
+        subscribeForm.reset();
+      });
+    </script>
+  </body>
+</html>

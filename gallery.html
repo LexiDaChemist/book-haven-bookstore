@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book Haven Bookstore | Gallery</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-title">
+        <img
+          src="https://cdn2.sophia.org/markup_pictures/38795/file/a13a208b52c41843ee81f565917670dc.png"
+          alt="Book Haven Bookstore logo"
+          width="120"
+        />
+
+        <h1>Book Haven Bookstore</h1>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us/Contact</a>
+        <a href="community.html">Reading Lounge</a>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Shop Our Featured Products</h2>
+
+      <button type="button" id="viewCartBtn">View Cart</button>
+
+      <div id="cartModal">
+        <h3>Shopping Cart</h3>
+        <div id="cartItems"></div>
+        <button type="button" id="clearCartBtn">Clear Cart</button>
+        <button type="button" id="processOrderBtn">Process Order</button>
+        <button type="button" id="closeCartBtn">Close</button>
+      </div>
+
+      <table border="1">
+        <tr>
+          <td>
+            <img
+              src="https://cdn2.sophia.org/markup_pictures/42784/file/cbbabbf6c98fb9ac8d5d0e00e904b023.png"
+              alt="Brie Mine 4Ever book"
+            />
+            <h3>Brie Mine 4Ever</h3>
+            <p>A fun book for cheese lovers and cozy readers.</p>
+            <button type="button" class="addCartBtn">Add to Cart</button>
+          </td>
+
+          <td>
+            <img
+              src="https://cdn2.sophia.org/markup_pictures/42785/file/09d7c4abfd897fef28d79af05ca02e2e.png"
+              alt="Glory Riders book"
+            />
+            <h3>Glory Riders</h3>
+            <p>An exciting book about bikers and adventure.</p>
+            <button type="button" class="addCartBtn">Add to Cart</button>
+          </td>
+
+          <td>
+            <img
+              src="https://cdn2.sophia.org/markup_pictures/42786/file/ba3a50be61dab549f87ba951a49ed110.png"
+              alt="Sorcerer's Shadowed Chronicles book"
+            />
+            <h3>Sorcerer's Shadowed Chronicles</h3>
+            <p>A fantasy story filled with mystery and magic.</p>
+            <button type="button" class="addCartBtn">Add to Cart</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img
+              src="https://cdn2.sophia.org/markup_pictures/42787/file/d2c65b7ff3661c4d3a945a80e13f657c.png"
+              alt="Ball magazine"
+            />
+            <h3>Ball Magazine</h3>
+            <p>A magazine for pickleball fans and active readers.</p>
+            <button type="button" class="addCartBtn">Add to Cart</button>
+          </td>
+
+          <td>
+            <img
+              src="https://cdn2.sophia.org/markup_pictures/42788/file/8d40613d5c21f0b17311413ccdc977b5.png"
+              alt="Travel magazine"
+            />
+            <h3>Travel Magazine</h3>
+            <p>A magazine for readers who love travel and discovery.</p>
+            <button type="button" class="addCartBtn">Add to Cart</button>
+          </td>
+
+          <td>
+            <img
+              src="https://cdn2.sophia.org/markup_pictures/42789/file/40fa6225a49bf6e022dee7f81e12e83a.png"
+              alt="Eat magazine"
+            />
+            <h3>Eat Magazine</h3>
+            <p>A food magazine for culinary inspiration.</p>
+            <button type="button" class="addCartBtn">Add to Cart</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img
+              src="https://cdn2.sophia.org/markup_pictures/42790/file/8429efc117f9e43a5f4ec887cb808a34.png"
+              alt="Book Haven tote bag"
+            />
+            <h3>Book Haven Tote Bag</h3>
+            <p>A canvas tote bag for carrying books and supplies.</p>
+            <button type="button" class="addCartBtn">Add to Cart</button>
+          </td>
+
+          <td>
+            <img
+              src="https://cdn2.sophia.org/markup_pictures/42791/file/4f5d6556ca4b5aadc11cce74adadb9d0.png"
+              alt="Book Haven notebook"
+            />
+            <h3>Book Haven Notebook</h3>
+            <p>A bookstore notebook for notes, journaling, and study.</p>
+            <button type="button" class="addCartBtn">Add to Cart</button>
+          </td>
+
+          <td>
+            <img
+              src="https://cdn2.sophia.org/markup_pictures/42792/file/b6514b40691664e175da8f51576c4f85.png"
+              alt="Book Haven sticker set"
+            />
+            <h3>Book Haven Sticker Set</h3>
+            <p>A set of reading-themed stickers for book lovers.</p>
+            <button type="button" class="addCartBtn">Add to Cart</button>
+          </td>
+        </tr>
+      </table>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <h3>Subscribe to Our Newsletter</h3>
+
+        <form id="subscribeForm">
+          <label for="newsletter">Email:</label>
+          <input type="email" id="newsletter" name="newsletter" required />
+          <button type="submit">Subscribe</button>
+        </form>
+
+        <p>Follow us: Facebook | Instagram | Pinterest</p>
+      </div>
+    </footer>
+
+    <script>
+      const subscribeForm = document.getElementById('subscribeForm');
+
+      subscribeForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        alert('Thank you for subscribing.');
+        subscribeForm.reset();
+      });
+
+      const cartButtons = document.querySelectorAll('.addCartBtn');
+
+      cartButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          const productCell = button.parentElement;
+          const productName = productCell.querySelector('h3').innerText;
+          const productDescription = productCell.querySelector('p').innerText;
+
+          let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+          cart.push({
+            name: productName,
+            description: productDescription,
+          });
+
+          sessionStorage.setItem('cart', JSON.stringify(cart));
+
+          alert('Item added to the cart.');
+        });
+      });
+
+      const viewCartBtn = document.getElementById('viewCartBtn');
+      const cartModal = document.getElementById('cartModal');
+      const cartItems = document.getElementById('cartItems');
+
+      viewCartBtn.addEventListener('click', function () {
+        let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+        cartItems.innerHTML = '';
+
+        if (cart.length === 0) {
+          cartItems.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+          cart.forEach(function (item) {
+            cartItems.innerHTML +=
+              '<p><strong>' +
+              item.name +
+              '</strong><br>' +
+              item.description +
+              '</p>';
+          });
+        }
+
+        cartModal.style.display = 'block';
+      });
+
+      const closeCartBtn = document.getElementById('closeCartBtn');
+
+      closeCartBtn.addEventListener('click', function () {
+        cartModal.style.display = 'none';
+      });
+
+      const clearCartBtn = document.getElementById('clearCartBtn');
+
+      clearCartBtn.addEventListener('click', function () {
+        sessionStorage.removeItem('cart');
+        cartItems.innerHTML = '<p>Your cart is empty.</p>';
+        alert('Cart cleared.');
+      });
+
+      const processOrderBtn = document.getElementById('processOrderBtn');
+
+      processOrderBtn.addEventListener('click', function () {
+        sessionStorage.removeItem('cart');
+        cartItems.innerHTML = '<p>Your cart is empty.</p>';
+        alert('Thank you for your order.');
+      });
+    </script>
+  </body>
+</html>

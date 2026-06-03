@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book Haven Bookstore | About Us</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-title">
+        <img
+          src="https://cdn2.sophia.org/markup_pictures/38795/file/a13a208b52c41843ee81f565917670dc.png"
+          alt="Book Haven Bookstore logo"
+          width="120"
+        />
+
+        <h1>Book Haven Bookstore</h1>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us/Contact</a>
+        <a href="community.html">Reading Lounge</a>
+      </nav>
+    </header>
+
+    <main>
+      <h2>About Book Haven Bookstore</h2>
+
+      <p>
+        Book Haven Bookstore is a local treasure for book lovers, students, and
+        knowledge seekers. The bookstore offers a diverse selection of books,
+        magazines, journals, and office supplies while supporting literary
+        exploration and intellectual growth.
+      </p>
+
+      <h2>Business Hours</h2>
+
+      <table>
+        <tr>
+          <th>Day</th>
+          <th>Hours</th>
+        </tr>
+
+        <tr>
+          <td>Monday–Friday</td>
+          <td>9 a.m. – 8 p.m.</td>
+        </tr>
+
+        <tr>
+          <td>Saturday</td>
+          <td>10 a.m. – 6 p.m.</td>
+        </tr>
+
+        <tr>
+          <td>Sunday</td>
+          <td>11 a.m. – 5 p.m.</td>
+        </tr>
+      </table>
+
+      <h2>Contact Us / Custom Orders</h2>
+
+      <form id="contactForm">
+        <p>
+          <label for="name">Name:</label><br />
+          <input type="text" id="name" name="name" required />
+        </p>
+
+        <p>
+          <label for="email">Email Address:</label><br />
+          <input type="email" id="email" name="email" required />
+        </p>
+
+        <p>
+          <label for="phone">Phone Number:</label><br />
+          <input type="tel" id="phone" name="phone" />
+        </p>
+
+        <p>
+          <label for="feedback">Feedback or Order Details:</label><br />
+          <textarea id="feedback" name="feedback" rows="5" required></textarea>
+        </p>
+
+        <p>
+          <input type="checkbox" id="customorder" />
+          <label for="customorder">Custom Book Order Request</label>
+        </p>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Clear Form</button>
+      </form>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <h3>Subscribe to Our Newsletter</h3>
+
+        <form id="subscribeForm">
+          <label for="newsletter">Email:</label>
+          <input type="email" id="newsletter" name="newsletter" required />
+          <button type="submit">Subscribe</button>
+        </form>
+
+        <p>Follow us: Facebook | Instagram | Pinterest</p>
+      </div>
+    </footer>
+
+    <script>
+      const contactForm = document.getElementById('contactForm');
+
+      contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        if (contactForm.checkValidity()) {
+          const customerInfo = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            feedback: document.getElementById('feedback').value,
+            customOrder: document.getElementById('customorder').checked,
+          };
+
+          localStorage.setItem('customerInfo', JSON.stringify(customerInfo));
+
+          alert('Thank you for your message.');
+          contactForm.reset();
+        }
+      });
+
+      const subscribeForm = document.getElementById('subscribeForm');
+
+      subscribeForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        alert('Thank you for subscribing.');
+        subscribeForm.reset();
+      });
+    </script>
+  </body>
+</html>
